@@ -1,0 +1,28 @@
+ssh-keygen -t rsa -C "edgartorosian@gmail.com" -> id-rsa (public to access to the repository, private to sign commits)
+git config --global user.name "Edgar Torosyan"
+git config --global user.email "edgartorosian@gmail.com"
+
+git clone [repository ssh key] -> to clone the repository
+git remote -v -> shows where is the origin, for example repository is on the github
+git status -> on what branch we are and if there are new or changed files
+git add song.txt -> to add new untracked file in commit
+git commit -m "some message about commit" -> add changes to the local repository
+git log -> commits history
+git push -> synchronize local and remote server repositories (upload changes)
+git pull -> synchronize local and remote server repositories (download changes)
+
+git checkout -- README.md -> revert changes in the specific file from local repository
+git chekcout . -> revert changes in all modified files from local repository, we can't get back changes after checkout
+git clean -xdf -> remove all new created empty files
+git reset -- file.txt -> exclude file from index (when we already have added to commit but want to revert)
+git commit --amend -m "commit message" -> when we have commited chnages and after we want to something new or change in commit
+git reset HEAD^^ (HEAD~2) -> discard from commit, mention commits count
+git revert [commit id - 06026] -> create mirror commit (delet added and add deleted). REVERTED COMMIT CAN BE REVERTED!!!!!!!!
+
+.gitignore
+*.log -> no .log files
+!error.log -> track error.log even though you're ignoring .log files above
+/TODO -> only ignore TODO file in the current directory, not subdir/TODO
+build/ -> ignore all files in the build/ directory
+doc/*.txt -> ignore doc/notes.txt, but doc/server/arch.txt
+doc/**/*.pdf -> ignore all pdf files in the doc/ directory
