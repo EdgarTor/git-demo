@@ -1,3 +1,11 @@
+***************
+Books
+
+1) Pro Git by Scott Chacon and Ben Straub
+2) Version Control wit Git by Jon Loeliger, Matthew McCullough
+***************
+
+
 ssh-keygen -t rsa -C "edgartorosian@gmail.com" -> id-rsa (public to access to the repository, private to sign commits)
 git config --global user.name "Edgar Torosyan"
 git config --global user.email "edgartorosian@gmail.com"
@@ -26,3 +34,20 @@ git revert [commit id - 06026] -> create mirror commit (delet added and add dele
 build/ -> ignore all files in the build/ directory
 doc/*.txt -> ignore doc/notes.txt, but doc/server/arch.txt
 doc/**/*.pdf -> ignore all pdf files in the doc/ directory
+
+git branch --all -> show all branches
+git checkout -b feature -> create and switch to the new branch "feature"
+git checkout main -> switch to the branch "main"
+git push origin feature -> push created local branch to the remote
+git merge feature -> merge branch "feature" to the branch "main"
+git merge --abort -> abort merge (if we have some conflicts)
+git checkout --Xteirs -> if has any conflict choose another person's version
+git checkout --Xours -> if has any conflict choose own version
+git rebase main -> make the latest main commit as a parent of the first commit of feature branch
+git cherry-pick -> add the specific commit to another branch
+
+we can use tags instead of sha1 to checkout , revert commits
+git tag versio1 -> add tag "version1" to the commit
+git tag -list -> view tags
+git push --tags -> push tags
+git checkout ver1 -> check it out to the ver1
